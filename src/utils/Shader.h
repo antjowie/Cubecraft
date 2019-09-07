@@ -3,7 +3,7 @@
 
 #include <glad/glad.h>
 
-// The Shader class 
+// The Shader class compiles shaders and links them to a program
 class Shader
 {
 private:
