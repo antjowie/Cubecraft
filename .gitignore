@@ -1,0 +1,10 @@
+# Visual studio files
+*.filters
+*.user
+.vs/
+
+/bin
+/bin-int
+
+# Visual code files
+.vscode/

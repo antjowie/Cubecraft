@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cubecraft", "Cubecraft.vcxproj", "{155E94AC-45F3-4C8D-BC40-1E377FE9A185}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{155E94AC-45F3-4C8D-BC40-1E377FE9A185}.Debug|x64.ActiveCfg = Debug|x64
+		{155E94AC-45F3-4C8D-BC40-1E377FE9A185}.Debug|x64.Build.0 = Debug|x64
+		{155E94AC-45F3-4C8D-BC40-1E377FE9A185}.Release|x64.ActiveCfg = Release|x64
+		{155E94AC-45F3-4C8D-BC40-1E377FE9A185}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB84BC43-4F12-4AC4-AA29-B13C2A4BF9AC}
+	EndGlobalSection
+EndGlobal
