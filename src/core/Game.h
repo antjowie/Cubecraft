@@ -5,6 +5,9 @@
 #include "objects/Block.h"
 #include "objects/BlockMesh.h"
 
+// The game class is responsible for running the game
+// It is responsible for all the systems
+
 class Game 
 {
 private:

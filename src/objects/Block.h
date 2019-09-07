@@ -3,6 +3,8 @@
 
 class BlockMesh;
 
+// Block is an object in the game that is static
+
 class Block
 {
 private:

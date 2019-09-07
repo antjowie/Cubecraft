@@ -6,7 +6,7 @@
 #include <sstream>
 #include <iostream>
 
-bool Shader::addShader(int shaderType, const char * shaderPath)
+bool Shader::addShader(Shader::Type shaderType, const char * shaderPath)
 {
 	std::ifstream file;
 
@@ -25,7 +25,7 @@ bool Shader::addShader(int shaderType, const char * shaderPath)
 	const char* source = string.c_str();
 
 	// Assume we always load 1 shader
-	GLuint shader = glCreateShader(shaderType);
+	GLuint shader = glCreateShader(static_cast<GLenum>(shaderType));
 	glShaderSource(shader, 1, &source, nullptr);
 	glCompileShader(shader);
 
@@ -46,7 +46,7 @@ bool Shader::addShader(int shaderType, const char * shaderPath)
 	return true;
 }
 
-bool Shader::linkProgram(unsigned program)
+bool Shader::linkProgram(GLuint program)
 {
 	for (unsigned shader : m_shaders)
 	{

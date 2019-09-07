@@ -1,5 +1,7 @@
 #pragma once
 
+// This class contains the mesh of a block
+
 class BlockMesh
 {
 private:

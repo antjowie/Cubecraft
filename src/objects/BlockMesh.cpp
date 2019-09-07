@@ -4,26 +4,14 @@
 #include <glad/glad.h>
 #include <iostream>
 
-#ifdef DEBUG
-#include <cassert>
-#endif // DEBUG
-
 BlockMesh::BlockMesh()
 {
-	// Should this be a singleton???
-#ifdef DEBUG
-	static bool initialized = false;
-	assert(!initialized && "BlockMesh got constructed multiple times");
-	initialized = true;
-#endif // DEBUG
-
-
 	Shader shader;
 	m_program = glCreateProgram();
 
-	if (!shader.addShader(GL_VERTEX_SHADER, "resources/shaders/block.vert"))
+	if (!shader.addShader(Shader::Type::VERTEX, "resources/shaders/block.vert"))
 		std::cout << "Vertex shader failed compilation\n";
-	if (!shader.addShader(GL_FRAGMENT_SHADER, "resources/shaders/block.frag"))
+	if (!shader.addShader(Shader::Type::FRAGMENT, "resources/shaders/block.frag"))
 		std::cout << "Fragment shader failed compilation\n";
 	if (!shader.linkProgram(m_program))
 		std::cout << "Linking program failed\n";
