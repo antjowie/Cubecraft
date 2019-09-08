@@ -10,19 +10,19 @@
 
 class Game 
 {
+public:
+	Game(int width, int height);
+
+	void run();
+
 private:
+	void handleInput(double elapsedTime);
+	void update(double elapsedTime);
+	void render();
+
 	GLFWwindow * m_windowHandle;
 	Graphics m_graphics;
 
 	Block m_block;
 	BlockMesh m_blockMesh;
-
-	void handleInput(double elapsedTime);
-	void update(double elapsedTime);
-	void render();
-
-public:
-	Game(int width, int height);
-
-	void run();
 };

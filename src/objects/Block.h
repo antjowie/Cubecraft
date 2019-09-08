@@ -7,11 +7,12 @@ class BlockMesh;
 
 class Block
 {
+public:
+	Block(const BlockMesh &mesh);
+	
+	void draw() const;
+
 private:
 	const BlockMesh & m_mesh;
 	glm::vec3 m_pos;
-
-public:
-	Block(const BlockMesh &mesh);
-	void draw() const;
 };

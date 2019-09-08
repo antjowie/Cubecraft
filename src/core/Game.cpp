@@ -58,7 +58,7 @@ void Game::run()
 		glfwSwapBuffers(m_windowHandle);
 		glfwPollEvents();
 
-		// Framerate
+		// Display framerate 
 		frames++;
 		elapsedFrameTime += elapsedTime;
 		if (elapsedFrameTime > 1.)
