@@ -14,5 +14,5 @@ public:
 
 private:
 	const BlockMesh & m_mesh;
-	glm::vec3 m_pos;
+	//glm::vec3 m_pos;
 };

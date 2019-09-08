@@ -20,11 +20,8 @@ public:
 
 	enum class KeyState
 	{
-		PRESS,
 		HOLD,
-		RELEASE,
-
-		ERROR
+		RELEASE
 	};
 
 private:

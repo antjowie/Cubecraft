@@ -32,7 +32,7 @@ public:
 	{
 		// NONE will always be logged
 		NONE,
-		ERROR,
+		FATAL,
 		WARNING,
 		INFO,
 		VERBOSE

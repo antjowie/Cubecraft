@@ -1,6 +1,8 @@
 #include "Shader.h"
+#include "Logger.h"
 
 #include <glad/glad.h>
+
 
 #include <fstream>
 #include <sstream>
@@ -13,7 +15,9 @@ bool Shader::addShader(Shader::Type shaderType, const char * shaderPath)
 	file.open(shaderPath);
 	if (!file.is_open())
 	{
-		std::cout << "Could not find shader located at\"" << shaderPath << "\"\n";
+		std::string message("Could not find shader located at " + std::string(shaderPath));
+		LOG(message, Logger::Severity::FATAL);
+		
 		return false;
 	}
 
@@ -36,7 +40,7 @@ bool Shader::addShader(Shader::Type shaderType, const char * shaderPath)
 	{
 		char info[512];
 		glGetShaderInfoLog(shader, 512, nullptr, info);
-		std::cout << "Error while compiling shader: " << info << '\n';
+		LOG(std::string("Error while compiling shader: ") +info, Logger::Severity::FATAL);
 
 		glDeleteShader(shader);
 		return false;
@@ -63,8 +67,8 @@ bool Shader::linkProgram(GLuint program)
 	{
 		char info[512];
 		glGetProgramInfoLog(program, 512, nullptr, info);
-		std::cout << "Error while linking program: " << info << '\n';
-
+		LOG(std::string("Error while linking program: ") + info, Logger::Severity::FATAL);
+		
 		return false;
 	}
 	return true;

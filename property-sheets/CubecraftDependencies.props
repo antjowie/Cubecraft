@@ -15,7 +15,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>

@@ -23,7 +23,7 @@ Logger& Logger::operator<<(const Log& log)
 	if (log.severity >= m_configuration.filterSeverity)
 		return *this;
 
-	std::printf("[%s] In file %s at line %d: %s",
+	std::printf("[%s] In file %s at line %d: %s\n",
 		severityToString(log.severity).c_str(),
 		log.file.c_str(),
 		log.line,
@@ -43,8 +43,8 @@ std::string Logger::severityToString(Logger::Severity severity)
 	case Logger::Severity::NONE:
 		return "NONE";
 		break;
-	case Logger::Severity::ERROR:
-		return "ERROR";
+	case Logger::Severity::FATAL:
+		return "FATAL";
 		break;
 	case Logger::Severity::WARNING:
 		return "WARNING";

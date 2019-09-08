@@ -40,10 +40,6 @@ InputHandler::KeyState InputHandler::convertGLFWState(int state)
 	switch (state)
 	{
 	case GLFW_PRESS:
-		return KeyState::PRESS;
-		break;
-
-	case GLFW_REPEAT:
 		return KeyState::HOLD;
 		break;
 
