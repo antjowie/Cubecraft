@@ -45,6 +45,7 @@
   </ImportGroup>
   <ItemGroup>
     <ClCompile Include="extlibs\GLAD\src\glad.c" />
+    <ClCompile Include="src\core\InputHandler.cpp" />
     <ClCompile Include="src\utils\Logger.cpp" />
     <ClCompile Include="src\core\Game.cpp" />
     <ClCompile Include="src\core\Graphics.cpp" />
@@ -54,6 +55,7 @@
     <ClCompile Include="src\utils\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\InputHandler.h" />
     <ClInclude Include="src\utils\Logger.h" />
     <ClInclude Include="src\core\Game.h" />
     <ClInclude Include="src\core\Graphics.h" />
