@@ -1,7 +1,6 @@
 #pragma once
 
-// This class contains the mesh of a block
-
+// Blockmesh is its own class so that rendering can be split from the logic
 class BlockMesh
 {
 private:

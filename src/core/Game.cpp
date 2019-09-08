@@ -1,7 +1,10 @@
 #include "Game.h"
+#include "utils/Logger.h"
+
+#include <GLFW/glfw3.h>
 
 #include <iostream>
-#include <GLFW/glfw3.h>
+
 
 void Game::handleInput(double elapsedTime)
 {
@@ -60,8 +63,12 @@ void Game::run()
 		elapsedFrameTime += elapsedTime;
 		if (elapsedFrameTime > 1.)
 		{
-			std::printf("Rendered %i frames in %.2f seconds => %.2f fps \t| totalTime %.2f\n", 
+			char message[128];
+			std::sprintf(message, "Rendered %i frames in %.2f seconds => %.2f fps \t| totalTime %.2f\n",
 				frames, elapsedFrameTime, static_cast<double>(frames) / elapsedFrameTime, totalTime);
+			
+			LOG(message, Logger::Severity::INFO);
+			
 			frames = 0;
 			elapsedFrameTime -= 1.;
 		}
