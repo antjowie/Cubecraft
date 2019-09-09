@@ -9,9 +9,12 @@ BlockMesh::BlockMesh()
 	// Make the cube
 	// well, it is actually a temp triangle
 	static const GLfloat vertices[] = {
-		-0.5f, -0.5f, 0.0f, // left  
-		 0.5f, -0.5f, 0.0f, // right 
-		 0.0f,  0.5f, 0.0f  // top   
+		-0.5f, -0.5f, -1.0f, // bottom left  
+		 0.5f, -0.5f, -1.0f, // bottom right 
+		-0.5f,  0.5f, -1.0f, // top left 
+	    -0.5f,  0.5f, -1.0f, // top left  
+		 0.5f, -0.5f, -1.0f, // bottom right 
+		 0.5f,  0.5f, -1.0f  // top right
 	};
 	// Gen buffers and bind
 	GLuint vbo;
@@ -35,6 +38,6 @@ void BlockMesh::draw() const
 {
 	//glUseProgram(m_program);
 	glBindVertexArray(m_vao);
-	glDrawArrays(GL_TRIANGLES, 0, 3);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glBindVertexArray(0);
 }
