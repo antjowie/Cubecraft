@@ -27,7 +27,7 @@ void Game::render()
 
 Game::Game(int width, int height)
 	: m_windowHandle(m_graphics.createWindow(width,height))
-	, m_camera(std::make_unique<FreelookCamera>(50))
+	, m_camera(std::make_unique<FreelookCamera>(50,6))
 	, m_inputHandler(*m_windowHandle)
 {
 	m_blocks.push_back(Block(m_blockMesh));

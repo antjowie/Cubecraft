@@ -8,7 +8,7 @@ BlockMesh::BlockMesh()
 {
 	// Make the cube
 	// well, it is actually a temp triangle
-	static const GLfloat vertices[] = {
+	constexpr GLfloat vertices[] = {
 	-1.0f,-1.0f,-1.0f, // triangle 1 : begin
 	-1.0f,-1.0f, 1.0f,
 	-1.0f, 1.0f, 1.0f, // triangle 1 : end
@@ -46,6 +46,7 @@ BlockMesh::BlockMesh()
 	-1.0f, 1.0f, 1.0f,
 	 1.0f,-1.0f, 1.0f
 	};
+
 	// Gen buffers and bind
 	GLuint vbo;
 	glGenBuffers(1, &vbo);

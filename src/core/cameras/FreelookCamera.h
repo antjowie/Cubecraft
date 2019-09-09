@@ -13,7 +13,6 @@ public:
 	virtual void handleInput(const InputHandler& inputHandler, float elapsedTime) override final;
 
 private:
-	glm::vec2 m_mousePos;
 	glm::vec3 m_direction;
 
 	float m_yaw;

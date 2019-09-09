@@ -3,8 +3,9 @@
 
 #include <glm/ext/matrix_transform.hpp>
 
+#include <iostream>
+
 FreelookCamera::FreelookCamera(float sensitivity, float speed) :
-	m_mousePos(0.f),
 	m_direction(glm::vec3(0.f, 0.f, -1.f)),
 	m_yaw(0),
 	m_pitch(0),
@@ -63,26 +64,25 @@ void FreelookCamera::handleInput(const InputHandler& inputHandler, float elapsed
 	if (inputHandler.key(GLFW_KEY_RIGHT) == InputHandler::KeyState::HOLD)
 		m_yaw += m_sensitivity * elapsedTime;
 
-	m_pitch = glm::clamp(m_pitch, -89.f, 89.f);
+	//m_pitch = glm::clamp(m_pitch, -89.f, 89.f);
+
+	inputHandler.grabCursor(true);
+	double x, y;
+	inputHandler.cursorPos(x, y);
+	inputHandler.setCursorPos(0, 0);
 
 	// Can't get mouse to work because it keeps going out of screen
-	//const glm::vec2 oldMousePos = m_mousePos;
-	//m_mousePos = input.GetMousePos();
-	//const glm::vec2 deltaMouse = m_mousePos - oldMousePos;
-	//m_yaw += deltaMouse.x * m_sensitivity;
-	//m_pitch += deltaMouse.y * m_sensitivity;
-	//glm::clamp(m_pitch, -89.f, 89.f);
+	constexpr float cursorModifier = 200.f;
+	m_yaw += x * m_sensitivity / cursorModifier;
+	m_pitch -= y * m_sensitivity / cursorModifier;
+	m_pitch = glm::clamp(m_pitch, -89.f, 89.f);
+
+	std::printf("Cursor pos x: %.2f y: %.2f\n", x, y);
 
 	m_direction = glm::normalize(glm::vec3(
 		glm::cos(glm::radians(m_pitch)) * glm::sin(glm::radians(m_yaw)),
 		glm::sin(glm::radians(m_pitch)),
 		-glm::cos(glm::radians(m_pitch)) * glm::cos(glm::radians(m_yaw))));
 
-	//m_direction = glm::normalize(glm::vec3(
-	//	glm::cos(glm::radians(m_pitch)) * glm::cos(glm::radians(m_yaw)),
-	//	glm::sin(glm::radians(m_pitch)),
-	//	glm::cos(glm::radians(m_pitch)) * glm::sin(glm::radians(m_yaw))));
-
-	//printf("%.2f %.2f %.2f\n", pos().x, pos().y, pos().z);
 	setTarget(pos() + m_direction);
 }
