@@ -43,6 +43,16 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="property-sheets\CubecraftDependencies.props" />
   </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)extlibs\stb;$(SolutionDir)extlibs\GLAD\include;$(SolutionDir)extlibs\GLFW\include;$(SolutionDir)extlibs\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)extlibs\stb;$(SolutionDir)extlibs\GLAD\include;$(SolutionDir)extlibs\GLFW\include;$(SolutionDir)extlibs\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="extlibs\GLAD\src\glad.c" />
     <ClCompile Include="src\core\BlockRenderer.cpp" />
@@ -58,6 +68,7 @@
     <ClCompile Include="src\utils\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="extlibs\stb\stb_image.h" />
     <ClInclude Include="src\core\BlockRenderer.h" />
     <ClInclude Include="src\core\cameras\Camera.h" />
     <ClInclude Include="src\core\cameras\FreelookCamera.h" />
