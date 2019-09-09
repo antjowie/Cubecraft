@@ -6,45 +6,54 @@
 
 BlockMesh::BlockMesh()
 {
-	// Make the cube
-	// well, it is actually a temp triangle
 	constexpr GLfloat vertices[] = {
-	-1.0f,-1.0f,-1.0f, // triangle 1 : begin
-	-1.0f,-1.0f, 1.0f,
-	-1.0f, 1.0f, 1.0f, // triangle 1 : end
-	 1.0f, 1.0f,-1.0f, // triangle 2 : begin
-	-1.0f,-1.0f,-1.0f,
-	-1.0f, 1.0f,-1.0f, // triangle 2 : end
-	 1.0f,-1.0f, 1.0f,
-	-1.0f,-1.0f,-1.0f,
-	 1.0f,-1.0f,-1.0f,
-	 1.0f, 1.0f,-1.0f,
-	 1.0f,-1.0f,-1.0f,
-	-1.0f,-1.0f,-1.0f,
-	-1.0f,-1.0f,-1.0f,
-	-1.0f, 1.0f, 1.0f,
-	-1.0f, 1.0f,-1.0f,
-	 1.0f,-1.0f, 1.0f,
-	-1.0f,-1.0f, 1.0f,
-	-1.0f,-1.0f,-1.0f,
-	-1.0f, 1.0f, 1.0f,
-	-1.0f,-1.0f, 1.0f,
-	 1.0f,-1.0f, 1.0f,
-	 1.0f, 1.0f, 1.0f,
-	 1.0f,-1.0f,-1.0f,
-	 1.0f, 1.0f,-1.0f,
-	 1.0f,-1.0f,-1.0f,
-	 1.0f, 1.0f, 1.0f,
-	 1.0f,-1.0f, 1.0f,
-	 1.0f, 1.0f, 1.0f,
-	 1.0f, 1.0f,-1.0f,
-	-1.0f, 1.0f,-1.0f,
-	 1.0f, 1.0f, 1.0f,
-	-1.0f, 1.0f,-1.0f,
-	-1.0f, 1.0f, 1.0f,
-	 1.0f, 1.0f, 1.0f,
-	-1.0f, 1.0f, 1.0f,
-	 1.0f,-1.0f, 1.0f
+	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+	-1.0f,-1.0f, 1.0f, 1.0f, 0.0f,
+	-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	
+	 1.0f, 1.0f,-1.0f, 1.0f, 1.0f,
+	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+	-1.0f, 1.0f,-1.0f, 0.0f, 1.0f,
+	
+	 1.0f,-1.0f, 1.0f, 1.0f, 1.0f,
+	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+	 1.0f,-1.0f,-1.0f, 1.0f, 0.0f,
+	
+	 1.0f, 1.0f,-1.0f, 1.0f, 1.0f,
+	 1.0f,-1.0f,-1.0f, 1.0f, 0.0f,
+	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+	
+	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+	-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	-1.0f, 1.0f,-1.0f, 1.0f, 0.0f,
+	
+	 1.0f,-1.0f, 1.0f, 1.0f, 1.0f,
+	-1.0f,-1.0f, 1.0f, 0.0f, 1.0f,
+	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+	
+	-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	-1.0f,-1.0f, 1.0f, 0.0f, 0.0f,
+	 1.0f,-1.0f, 1.0f, 1.0f, 0.0f,
+	
+	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	 1.0f,-1.0f,-1.0f, 0.0f, 0.0f, 
+	 1.0f, 1.0f,-1.0f, 1.0f, 0.0f, 
+	 
+	 1.0f,-1.0f,-1.0f, 0.0f, 0.0f, 
+	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	 1.0f,-1.0f, 1.0f, 0.0f, 1.0f,
+	 
+	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	 1.0f, 1.0f,-1.0f, 1.0f, 0.0f,
+	-1.0f, 1.0f,-1.0f, 0.0f, 0.0f,
+	 
+	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	-1.0f, 1.0f,-1.0f, 0.0f, 0.0f,
+	-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	
+ 	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	 1.0f,-1.0f, 1.0f, 1.0f, 0.0f
 	};
 
 	// Gen buffers and bind
@@ -63,12 +72,21 @@ BlockMesh::BlockMesh()
 
 	// Unbind
 	glBindVertexArray(0);
+
+
+	unsigned int texture;
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
 }
 
 void BlockMesh::draw() const
 {
 	//glUseProgram(m_program);
 	glBindVertexArray(m_vao);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
 	glDrawArrays(GL_TRIANGLES, 0, 3*2*6);
 	glBindVertexArray(0);
 }
