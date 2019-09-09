@@ -68,13 +68,20 @@ void GLAPIENTRY glDebugOutput(GLenum source,
 	std::cout << std::endl;
 }
 
+void glfwErrorCallback(int error, const char* message)
+{
+	LOG(std::string("GLFW: ") + message, Logger::Severity::FATAL);
+}
+
 GLFWwindow *Graphics::createWindow(int width, int height)
 {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
+
+	glfwSetErrorCallback(glfwErrorCallback);
 
 	// Create window
 	m_window = glfwCreateWindow(width, height, "Cubecraft", nullptr, nullptr);

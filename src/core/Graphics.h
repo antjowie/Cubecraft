@@ -11,7 +11,8 @@ class Graphics
 public:
 	Graphics();
 	~Graphics();
-
+	
+	// Returns a nullptr if creation failed
 	GLFWwindow* createWindow(int width, int height);
 
 private:
