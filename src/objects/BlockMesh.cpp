@@ -9,12 +9,42 @@ BlockMesh::BlockMesh()
 	// Make the cube
 	// well, it is actually a temp triangle
 	static const GLfloat vertices[] = {
-		-0.5f, -0.5f, -1.0f, // bottom left  
-		 0.5f, -0.5f, -1.0f, // bottom right 
-		-0.5f,  0.5f, -1.0f, // top left 
-	    -0.5f,  0.5f, -1.0f, // top left  
-		 0.5f, -0.5f, -1.0f, // bottom right 
-		 0.5f,  0.5f, -1.0f  // top right
+	-1.0f,-1.0f,-1.0f, // triangle 1 : begin
+	-1.0f,-1.0f, 1.0f,
+	-1.0f, 1.0f, 1.0f, // triangle 1 : end
+	 1.0f, 1.0f,-1.0f, // triangle 2 : begin
+	-1.0f,-1.0f,-1.0f,
+	-1.0f, 1.0f,-1.0f, // triangle 2 : end
+	 1.0f,-1.0f, 1.0f,
+	-1.0f,-1.0f,-1.0f,
+	 1.0f,-1.0f,-1.0f,
+	 1.0f, 1.0f,-1.0f,
+	 1.0f,-1.0f,-1.0f,
+	-1.0f,-1.0f,-1.0f,
+	-1.0f,-1.0f,-1.0f,
+	-1.0f, 1.0f, 1.0f,
+	-1.0f, 1.0f,-1.0f,
+	 1.0f,-1.0f, 1.0f,
+	-1.0f,-1.0f, 1.0f,
+	-1.0f,-1.0f,-1.0f,
+	-1.0f, 1.0f, 1.0f,
+	-1.0f,-1.0f, 1.0f,
+	 1.0f,-1.0f, 1.0f,
+	 1.0f, 1.0f, 1.0f,
+	 1.0f,-1.0f,-1.0f,
+	 1.0f, 1.0f,-1.0f,
+	 1.0f,-1.0f,-1.0f,
+	 1.0f, 1.0f, 1.0f,
+	 1.0f,-1.0f, 1.0f,
+	 1.0f, 1.0f, 1.0f,
+	 1.0f, 1.0f,-1.0f,
+	-1.0f, 1.0f,-1.0f,
+	 1.0f, 1.0f, 1.0f,
+	-1.0f, 1.0f,-1.0f,
+	-1.0f, 1.0f, 1.0f,
+	 1.0f, 1.0f, 1.0f,
+	-1.0f, 1.0f, 1.0f,
+	 1.0f,-1.0f, 1.0f
 	};
 	// Gen buffers and bind
 	GLuint vbo;
@@ -38,6 +68,6 @@ void BlockMesh::draw() const
 {
 	//glUseProgram(m_program);
 	glBindVertexArray(m_vao);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glDrawArrays(GL_TRIANGLES, 0, 3*2*6);
 	glBindVertexArray(0);
 }
