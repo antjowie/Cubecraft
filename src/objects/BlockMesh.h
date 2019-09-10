@@ -11,4 +11,5 @@ public:
 private:
 
 	unsigned m_vao;
+	unsigned m_texture;
 };

@@ -1,6 +1,4 @@
 #pragma once
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
 
 // Graphics is a system responsible for creating a window and 
 // creating an OpenGL context. I do not know what kind of interface
