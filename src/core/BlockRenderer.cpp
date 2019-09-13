@@ -13,6 +13,10 @@ BlockRenderer::BlockRenderer()
 	m_program = glCreateProgram();
 	if (!shader.linkProgram(m_program))
 		LOG("Linking program failed", Logger::Severity::FATAL);
+
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
+    glFrontFace(GL_CCW);
 }
 
 void BlockRenderer::render(const std::vector<Block>& blocks, const Camera& camera)

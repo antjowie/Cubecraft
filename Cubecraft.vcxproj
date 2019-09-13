@@ -47,11 +47,17 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)extlibs\stb;$(SolutionDir)extlibs\GLAD\include;$(SolutionDir)extlibs\GLFW\include;$(SolutionDir)extlibs\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDir)bin" "mklink /J "$(OutDir)resources" "$(SolutionDir)resources""</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)extlibs\stb;$(SolutionDir)extlibs\GLAD\include;$(SolutionDir)extlibs\GLFW\include;$(SolutionDir)extlibs\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDir)bin" "mklink /J "$(OutDir)resources" "$(SolutionDir)resources""</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="extlibs\GLAD\src\glad.c" />

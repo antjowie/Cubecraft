@@ -6,57 +6,58 @@
 
 #include "utils/Logger.h"
 
+constexpr GLfloat vertices[] = {
+-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+-1.0f,-1.0f, 1.0f, 1.0f, 0.0f,
+-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+
+ 1.0f, 1.0f,-1.0f, 1.0f, 1.0f,
+-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+-1.0f, 1.0f,-1.0f, 0.0f, 1.0f,
+
+ 1.0f,-1.0f, 1.0f, 1.0f, 1.0f,
+-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+ 1.0f,-1.0f,-1.0f, 1.0f, 0.0f,
+
+ 1.0f, 1.0f,-1.0f, 1.0f, 1.0f,
+ 1.0f,-1.0f,-1.0f, 1.0f, 0.0f,
+-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+
+-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+-1.0f, 1.0f,-1.0f, 1.0f, 0.0f,
+
+ 1.0f,-1.0f, 1.0f, 1.0f, 1.0f,
+-1.0f,-1.0f, 1.0f, 0.0f, 1.0f,
+-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+
+-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+-1.0f,-1.0f, 1.0f, 0.0f, 0.0f,
+ 1.0f,-1.0f, 1.0f, 1.0f, 0.0f,
+
+ 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+ 1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+ 1.0f, 1.0f,-1.0f, 1.0f, 0.0f,
+
+ 1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
+ 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+ 1.0f,-1.0f, 1.0f, 0.0f, 1.0f,
+
+ 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+ 1.0f, 1.0f,-1.0f, 1.0f, 0.0f,
+-1.0f, 1.0f,-1.0f, 0.0f, 0.0f,
+
+ 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+-1.0f, 1.0f,-1.0f, 0.0f, 0.0f,
+-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+
+ 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+ 1.0f,-1.0f, 1.0f, 1.0f, 0.0f
+};
+
 BlockMesh::BlockMesh()
 {
-	constexpr GLfloat vertices[] = {
-	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
-	-1.0f,-1.0f, 1.0f, 1.0f, 0.0f,
-	-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	
-	 1.0f, 1.0f,-1.0f, 1.0f, 1.0f,
-	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
-	-1.0f, 1.0f,-1.0f, 0.0f, 1.0f,
-	
-	 1.0f,-1.0f, 1.0f, 1.0f, 1.0f,
-	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
-	 1.0f,-1.0f,-1.0f, 1.0f, 0.0f,
-	
-	 1.0f, 1.0f,-1.0f, 1.0f, 1.0f,
-	 1.0f,-1.0f,-1.0f, 1.0f, 0.0f,
-	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
-	
-	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
-	-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	-1.0f, 1.0f,-1.0f, 1.0f, 0.0f,
-	
-	 1.0f,-1.0f, 1.0f, 1.0f, 1.0f,
-	-1.0f,-1.0f, 1.0f, 0.0f, 1.0f,
-	-1.0f,-1.0f,-1.0f, 0.0f, 0.0f,
-	
-	-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	-1.0f,-1.0f, 1.0f, 0.0f, 0.0f,
-	 1.0f,-1.0f, 1.0f, 1.0f, 0.0f,
-	
-	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	 1.0f,-1.0f,-1.0f, 0.0f, 0.0f, 
-	 1.0f, 1.0f,-1.0f, 1.0f, 0.0f, 
-	 
-	 1.0f,-1.0f,-1.0f, 0.0f, 0.0f, 
-	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	 1.0f,-1.0f, 1.0f, 0.0f, 1.0f,
-	 
-	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	 1.0f, 1.0f,-1.0f, 1.0f, 0.0f,
-	-1.0f, 1.0f,-1.0f, 0.0f, 0.0f,
-	 
-	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	-1.0f, 1.0f,-1.0f, 0.0f, 0.0f,
-	-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	
- 	 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	 1.0f,-1.0f, 1.0f, 1.0f, 0.0f
-	};
 
 	// Gen buffers and bind
 	GLuint vbo;
@@ -71,7 +72,7 @@ BlockMesh::BlockMesh()
 	// Set attrib pointers and enable the array
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)0);
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_TRUE, 5 * sizeof(GLfloat), (void*)3);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(1);
 
 
@@ -79,20 +80,23 @@ BlockMesh::BlockMesh()
 	glBindVertexArray(0);
 
 	// Load texture
-	glGenTextures(1, &m_texture);
+    glActiveTexture(GL_TEXTURE0);
+    glGenTextures(1, &m_texture);
 	glBindTexture(GL_TEXTURE_2D, m_texture);
 	// set the texture wrapping/filtering options (on the currently bound texture object)
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	// load and generate the texture
 	int width, height, nrChannels;
 	unsigned char* data = stbi_load("resources/textures/dirt.jpg", &width, &height, &nrChannels, 0);
 	if (data)
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
+		//glGenerateMipmap(GL_TEXTURE_2D);
 	}
 	else
 	{
@@ -108,6 +112,6 @@ void BlockMesh::draw() const
 	glBindTexture(GL_TEXTURE_2D, m_texture);
 	glBindVertexArray(m_vao);
 
-	glDrawArrays(GL_TRIANGLES, 0, 3*2*6);
+    glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices) / 5);
 	glBindVertexArray(0);
 }

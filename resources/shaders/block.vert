@@ -10,5 +10,5 @@ void main()
 {
     gl_Position = aMVP * vec4(aPos, 1);
 
-	TexCoords = aTexCoords
+	TexCoords = aTexCoords;
 }
