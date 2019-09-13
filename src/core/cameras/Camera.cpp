@@ -8,7 +8,7 @@ Camera::Camera() :
 	m_target(glm::vec3(0.f, 0.f, -1.f)),
 	m_nearFar(glm::vec2(0.1f, 100.f)),
 	m_fov(45.f),
-	m_aspectRatio(4.f / 3.f)
+	m_aspectRatio(16.f / 9.f)
 {
 }
 
