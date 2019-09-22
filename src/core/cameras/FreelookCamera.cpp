@@ -77,7 +77,7 @@ void FreelookCamera::handleInput(const InputHandler& inputHandler, float elapsed
 	m_pitch -= y * m_sensitivity / cursorModifier;
 	m_pitch = glm::clamp(m_pitch, -89.f, 89.f);
 
-	std::printf("Cursor pos x: %.2f y: %.2f\n", x, y);
+	//std::printf("Cursor pos x: %.2f y: %.2f\n", x, y);
 
 	m_direction = glm::normalize(glm::vec3(
 		glm::cos(glm::radians(m_pitch)) * glm::sin(glm::radians(m_yaw)),
